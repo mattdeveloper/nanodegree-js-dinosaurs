@@ -1,0 +1,13 @@
+{
+  "name": "js-nanodegree",
+  "version": "1.0.0",
+  "author": "Matt Oliveira <talk@mattdeveloper.com>",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.7.2"
+  }
+}
