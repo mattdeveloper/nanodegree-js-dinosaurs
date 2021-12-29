@@ -77,6 +77,9 @@ DinoConstructor.prototype.compareHeight = function (human) {
 // Add tiles to DOM
 
 // Remove form from screen
+function removeFormFromScreen() {
+  document.getElementById("dino-compare").style.display = "none";
+}
 
 // On button click, prepare and display infographic
 async function handleSubmit() {
@@ -96,4 +99,6 @@ async function handleSubmit() {
   let dinos = [];
   dinos = await getDinoData();
   console.log(dinos);
+
+  // removeFormFromScreen();
 }
