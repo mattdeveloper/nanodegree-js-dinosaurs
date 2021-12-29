@@ -30,10 +30,10 @@
   <form id="dino-compare">
     <div class="form-container">
       <p>Name:</p>
-      <input id="name" class="form-field__full" type="name" name="name">
+      <input id="name" class="form-field__full" type="name" name="name" value="testing">
       <p>Height</p>
       <label>Feet: <input id="feet" class="form-field__short" type="number" name="feet" value="2.26"></label>
-      <label>inches: <input id="inches" class="form-field__short" type="number" name="inches"></label>
+      <label>inches: <input id="inches" class="form-field__short" type="number" name="inches" value="10"></label>
       <p>Weight:</p>
       <label><input id="weight" class="form-field__full" type="number" name="weight" value="145.505">lbs</label>
       <p>Diet:</p>
@@ -42,7 +42,9 @@
         <option>Omnivor</option>
         <option>Carnivor</option>
       </select>
+
       <div id="btn">Compare Me!</div>
+      <section id="error"></section>
     </div>
   </form>
 
