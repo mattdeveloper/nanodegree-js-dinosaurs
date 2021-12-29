@@ -1,4 +1,16 @@
 // Create Dino Constructor
+function DinoConstructor(dino) {
+  const { species, weight, height, diet, where, when, fact } = dino;
+
+  this.species = species;
+  this.weight = weight;
+  this.height = height;
+  this.diet = diet;
+  this.where = where;
+  this.when = when;
+  this.fact = fact;
+  this.image = `./images/${species.toLowerCase()}.png`;
+}
 
 // Create Dino Objects
 async function getDinoData() {
