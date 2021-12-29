@@ -39,5 +39,16 @@ function getHumanData() {
 
 // On button click, prepare and display infographic
 function handleSubmit() {
-  console.log(getHumanData());
+  const human = getHumanData();
+
+  const error = document.getElementById("error");
+  if (
+    human.name === "" ||
+    human.feet === "" ||
+    human.inches === "" ||
+    human.weight === ""
+  ) {
+    error.innerHTML = "Please fill out all fields.";
+    return;
+  }
 }
