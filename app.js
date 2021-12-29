@@ -40,12 +40,37 @@ function getHumanData() {
 
 // Create Dino Compare Method 1
 // NOTE: Weight in JSON file is in lbs, height in inches.
+DinoConstructor.prototype.compareWeight = function (human) {
+  if (human.weight > this.weight) {
+    return "You are heavier than " + this.species;
+  } else if (human.weight < this.weight) {
+    return "You are lighter than " + this.species;
+  } else {
+    return "You are the same weight as " + this.species;
+  }
+};
 
 // Create Dino Compare Method 2
 // NOTE: Weight in JSON file is in lbs, height in inches.
+DinoConstructor.prototype.compareDiet = function (human) {
+  if (this.diet === human.diet) {
+    return "You are in the same diet as " + this.species;
+  } else {
+    return "You are not in the same diet as " + this.species;
+  }
+};
 
 // Create Dino Compare Method 3
 // NOTE: Weight in JSON file is in lbs, height in inches.
+DinoConstructor.prototype.compareHeight = function (human) {
+  if (human.inches > this.inches) {
+    return "You are taller than " + this.species;
+  } else if (human.inches < this.inches) {
+    return "You are shorter than " + this.species;
+  } else {
+    return "You are the same height as " + this.species;
+  }
+};
 
 // Generate Tiles for each Dino in Array
 
