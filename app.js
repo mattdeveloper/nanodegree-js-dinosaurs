@@ -3,6 +3,19 @@
 // Create Dino Objects
 
 // Create Human Object
+function getHumanData() {
+  const getValue = function (id) {
+    return document.getElementById(id).value;
+  };
+
+  return {
+    name: getValue("name"),
+    feet: getValue("feet"),
+    inches: getValue("inches"),
+    weight: getValue("weight"),
+    diet: getValue("diet"),
+  };
+}
 
 // Use IIFE to get human data from form
 (function () {
@@ -26,5 +39,5 @@
 
 // On button click, prepare and display infographic
 function handleSubmit() {
-  console.log("handleSubmit");
+  console.log(getHumanData());
 }
