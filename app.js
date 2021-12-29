@@ -15,7 +15,6 @@ function getHumanData() {
 
   return {
     name: getValue("name"),
-    feet: getValue("feet"),
     inches: getValue("inches"),
     weight: getValue("weight"),
     diet: getValue("diet"),
