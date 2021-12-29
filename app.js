@@ -1,6 +1,11 @@
 // Create Dino Constructor
 
 // Create Dino Objects
+async function getDinoData() {
+  const res = await fetch("./dino.json");
+  const json = await res.json();
+  return json.Dinos;
+}
 
 // Create Human Object
 function getHumanData() {
@@ -38,7 +43,7 @@ function getHumanData() {
 // Remove form from screen
 
 // On button click, prepare and display infographic
-function handleSubmit() {
+async function handleSubmit() {
   const human = getHumanData();
 
   const error = document.getElementById("error");
@@ -51,4 +56,8 @@ function handleSubmit() {
     error.innerHTML = "Please fill out all fields.";
     return;
   }
+
+  let dinos = [];
+  dinos = await getDinoData();
+  console.log(dinos);
 }
