@@ -119,8 +119,8 @@ function removeFormFromScreen() {
 function tryAgainClick() {
   const grid = document.getElementById("grid");
   grid.innerHTML = "";
-  document.getElementById("dino-compare").style.display = "block";
-  document.getElementById("try-gain").style.display = "none";
+  dinoCompare.style.display = "block";
+  tryAgain.style.display = "none";
 }
 
 // On button click, prepare and display infographic

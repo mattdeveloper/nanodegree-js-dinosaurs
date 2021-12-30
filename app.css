@@ -173,6 +173,7 @@ select {
 
 #try-again {
   display: none;
+  width: 180px;
 }
 
 /* Footer */
