@@ -73,6 +73,26 @@ DinoConstructor.prototype.compareHeight = function (human) {
 };
 
 // Generate Tiles for each Dino in Array
+function generateTiles(dino, human) {
+  let fact;
+  const randomFact = Math.floor(Math.random() * 3);
+
+  if (dino.species === "Pigeon") fact = dino.fact;
+  else if (randomFact === 0) fact = dino.compareWeight(human);
+  else if (randomFact === 1) fact = dino.compareDiet(human);
+  else if (randomFact === 2) fact = dino.compareHeight(human);
+  else fact = dino.fact;
+
+  const dinoTile = document.createElement("div");
+  dinoTile.classList.add("grid-item");
+  dinoTile.innerHTML = `
+    <h3>${dino.species}</h3>
+    <img src="${dino.image}" alt="${dino.species}">
+    <p>${fact}</p>
+  `;
+
+  return dinoTile;
+}
 
 // Add tiles to DOM
 
@@ -96,9 +116,14 @@ async function handleSubmit() {
     return;
   }
 
+  // removeFormFromScreen();
+
   let dinos = [];
   dinos = await getDinoData();
-  console.log(dinos);
+  dinos = dinos.map((dino) => new DinoConstructor(dino));
 
-  // removeFormFromScreen();
+  const grid = document.getElementById("grid");
+  dinos.forEach((dino) => {
+    grid.appendChild(generateTiles(dino, human));
+  });
 }
