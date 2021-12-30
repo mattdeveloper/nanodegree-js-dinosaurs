@@ -78,6 +78,17 @@ DinoConstructor.prototype.compareHeight = function (human) {
 
 // Generate Tiles for each Dino in Array
 function generateTiles(dino, human) {
+  if (!dino) {
+    const humanTile = document.createElement("div");
+    humanTile.classList.add("grid-item");
+    humanTile.innerHTML = `
+      <h3>${human.name}</h3>
+      <img src="./images/human.png" alt="human">
+      <p></p>
+    `;
+    return humanTile;
+  }
+
   let fact;
   const randomFact = Math.floor(Math.random() * 3);
 
@@ -134,7 +145,8 @@ async function handleSubmit() {
   dinos = dinos.map((dino) => new DinoConstructor(dino));
 
   const grid = document.getElementById("grid");
-  dinos.forEach((dino) => {
+  dinos.forEach((dino, index) => {
+    if (index === 4) grid.appendChild(generateTiles(null, human));
     grid.appendChild(generateTiles(dino, human));
   });
 }
