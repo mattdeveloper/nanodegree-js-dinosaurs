@@ -36,6 +36,7 @@ function getHumanData() {
 // Use IIFE to get human data from form
 (function () {
   document.getElementById("btn").addEventListener("click", handleSubmit);
+  document.getElementById("try-again").addEventListener("click", tryAgainClick);
 })();
 
 // Create Dino Compare Method 1
@@ -94,11 +95,18 @@ function generateTiles(dino, human) {
   return dinoTile;
 }
 
-// Add tiles to DOM
-
 // Remove form from screen
 function removeFormFromScreen() {
   document.getElementById("dino-compare").style.display = "none";
+  document.getElementById("try-gain").style.display = "block";
+}
+
+// Get start again
+function tryAgainClick() {
+  const grid = document.getElementById("grid");
+  grid.innerHTML = "";
+  document.getElementById("dino-compare").style.display = "block";
+  document.getElementById("try-gain").style.display = "none";
 }
 
 // On button click, prepare and display infographic
