@@ -67,9 +67,9 @@ DinoConstructor.prototype.compareDiet = function (human) {
 // Create Dino Compare Method 3
 // NOTE: Weight in JSON file is in lbs, height in inches.
 DinoConstructor.prototype.compareHeight = function (human) {
-  if (human.inches > this.inches) {
+  if (human.inches > this.height) {
     return "You are taller than " + this.species;
-  } else if (human.inches < this.inches) {
+  } else if (human.inches < this.height) {
     return "You are shorter than " + this.species;
   } else {
     return "You are the same height as " + this.species;
