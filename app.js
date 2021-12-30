@@ -1,3 +1,6 @@
+const dinoCompare = document.getElementById("dino-compare");
+const tryAgain = document.getElementById("try-again");
+
 // Create Dino Constructor
 function DinoConstructor(dino) {
   const { species, weight, height, diet, where, when, fact } = dino;
@@ -97,8 +100,8 @@ function generateTiles(dino, human) {
 
 // Remove form from screen
 function removeFormFromScreen() {
-  document.getElementById("dino-compare").style.display = "none";
-  document.getElementById("try-gain").style.display = "block";
+  dinoCompare.style.display = "none";
+  tryAgain.style.display = "block";
 }
 
 // Get start again
@@ -124,7 +127,7 @@ async function handleSubmit() {
     return;
   }
 
-  // removeFormFromScreen();
+  removeFormFromScreen();
 
   let dinos = [];
   dinos = await getDinoData();
